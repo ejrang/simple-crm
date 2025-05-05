@@ -43,7 +43,16 @@ mat-toolbar , mat-toolbar-row {
         }
 
         &:hover {
-            background-color: rgba(0, 0, 0, 0.12);
+            background-color: rgba(0, 0, 0, 0.0812);
+        }
+
+        :focus {
+            outline: none;
         }
     }
+}
+
+.router-container{
+    padding-left: 56px;
+    padding-top: 16px;
 }
