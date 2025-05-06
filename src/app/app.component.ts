@@ -9,6 +9,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -24,7 +27,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
      MatTooltipModule,
      MatDialogModule,
      MatInputModule,
-     MatFormFieldModule
+     MatFormFieldModule,
+     MatDatepickerModule,
+     MatNativeDateModule,
+     FormsModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
