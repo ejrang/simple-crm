@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -12,6 +12,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { AsyncPipe } from '@angular/common';
+import { Firestore } from '@angular/fire/firestore';
+import {MatCardModule} from '@angular/material/card';
 
 
 @Component({
@@ -30,11 +33,14 @@ import { FormsModule } from '@angular/forms';
      MatFormFieldModule,
      MatDatepickerModule,
      MatNativeDateModule,
-     FormsModule
+     FormsModule,
+     AsyncPipe,
+     MatCardModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  firestore: Firestore = inject(Firestore);
   title = 'simple-crm';
 }
