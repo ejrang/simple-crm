@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -18,34 +19,28 @@ import { Observable } from 'rxjs';
      MatButtonModule,
      MatTooltipModule,
      MatDialogModule,
-     MatCardModule,],
+     MatCardModule
+    ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
+  goToUser(id: string) {
+    this.router.navigate(['/user', id]);
+  }
   user = new User({});
   user$;
-
-  constructor(public dialog: MatDialog, private firestore: Firestore) {
+  users: any[] = [];
+  
+  constructor(public dialog: MatDialog, private firestore: Firestore, private router: Router) {
     const itemCollection = collection(this.firestore, 'users');
-    this.user$ = collectionData(itemCollection);
+    this.user$ = collectionData(itemCollection, { idField: 'id' }); // Include Firestore document IDs
   }
 
   ngOnInit(): void {
-console.log("Hey");
-
-console.log(this.user$);
-
-
-    // console.log("Fetching users from Firestore...");
-    // const usersCollection = collection(this.firestore, 'users');
-    // onSnapshot(usersCollectio, (snapshot) => {
-    //   snapshot.docs.forEach(doc => {
-    //     console.log('User data:', doc.data());
-    //   });
-    // }, error => {
-    //   console.error('Error fetching users from Firestore:', error);
-    // });
+    this.user$.subscribe(users => {
+      this.users = users;
+    });
   }
 
 openDialog() {
@@ -53,3 +48,5 @@ this.dialog.open(DialogAddUserComponent)
 }
 
 }
+
+

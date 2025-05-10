@@ -1,0 +1,39 @@
+.user-detail-header{
+    min-height: 250px;
+    background-color: #00008b;
+    display: flex;
+    flex-direction: unset;
+    align-items: flex-end;
+    color: white;
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 100%;
+        padding-top: 12px;
+        background-color: white;
+        margin-left: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+.user-details{
+    height: 100px;
+    width: 100px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    white-space: nowrap;
+
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
+.pin-right-upper-corner{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}

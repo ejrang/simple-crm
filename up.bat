@@ -1,3 +1,3 @@
 git add .
-git commit -m "connect with firebase"
+git commit -m "edit function"
 git push

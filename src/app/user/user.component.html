@@ -6,18 +6,13 @@
         <th>City</th>
      </tr>
 
-     <tr>
-        <td>afrfrf</td>
-        <td>afrfrf</td>
-        <td>afrfrf</td>
+     @for (user of users; track $index) {
+     <tr (click)="goToUser(user.id)">
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.street}}</td>
      </tr>
-
-     <tr>
-        <td>afrfrf</td>
-        <td>afrfrf</td>
-        <td>afrfrf</td>
-     </tr>
-
+    }
     </table>
   </mat-card>
 

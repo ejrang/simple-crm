@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { AsyncPipe } from '@angular/common';
 import { Firestore } from '@angular/fire/firestore';
 import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @Component({
@@ -35,7 +36,8 @@ import {MatCardModule} from '@angular/material/card';
      MatNativeDateModule,
      FormsModule,
      AsyncPipe,
-     MatCardModule
+     MatCardModule,
+     MatMenuModule
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
